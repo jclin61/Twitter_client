@@ -1,4 +1,8 @@
 TwitterJclin::Application.routes.draw do
+  get "tweets/index"
+  get "homes/index"
+  get "homes/create"
+  get "homes/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
