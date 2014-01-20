@@ -8,6 +8,7 @@ TwitterJclin::Application.routes.draw do
 
   #get to twitter authorization and callback
   get 'auth/twitter/callback', to: 'sessions#create'
+  get 'signout', to: 'sessions#destroy', as: 'signout'
   
 end
 
