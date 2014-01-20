@@ -20,6 +20,7 @@ end
 
 # omniauth gem for Twitter sign in 
 gem 'omniauth-twitter'
+
 # carrierwave Upload
 gem 'carrierwave'
 # Use SCSS for stylesheets
