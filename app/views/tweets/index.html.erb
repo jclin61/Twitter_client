@@ -5,13 +5,15 @@
 <!-- following sign in/sign out retreives information from your session -->
 
 <% if current_user %>
-    Hello <%= current_user.name %>
+    Hello <%= @user.name %>
     <%= link_to "Sign out", signout_path %>
 
-<p>Your Timeline</p>
+<p><%= @user.screen_name %>'s Timeline</p>
 
+<% @tweets.each do |tweet|%>
+	<ul><%= tweet.text %></ul>
+	<% end %>
 
-<%= @user.name %>
 
 
 <% else %> 
