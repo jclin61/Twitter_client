@@ -1,10 +1,11 @@
 <h3>Jerry C. Lin Twitter Client</h3>
 
-<!-- following sign in/sign out retreives information from session -->
+<!-- following sign in/sign out retreives information from your session -->
 
 <% if current_user %>
     Hello <%= current_user.name %>
     <%= link_to "Sign out", signout_path %>
-<% else %>
+    
+<% else %> 
     <%=link_to "Sign In with your Twitter Account", "/auth/twitter" %>
 <% end %>
