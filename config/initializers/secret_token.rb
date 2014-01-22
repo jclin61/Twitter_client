@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TwitterJclin::Application.config.secret_key_base = 'ebb4eebad8f7dfa7474ecaa69cec73abdb4e8df70cbe485b896668921a1d6f6c4a9a5d2b796be1d982c0c13831e4b55b5dee743e9acbe03f396ccb0dd3d6092e'
+SignInWithTwitter::Application.config.secret_key_base = '9a323175e255418bd658abf983298d7d4cdffbc7a618a7c6478f8533412cb96fdc4e1ad44044f67a216370c16434fad67cf904ce38f59caba8a22dc17ad87cc6'

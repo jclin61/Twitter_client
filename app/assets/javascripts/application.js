@@ -10,7 +10,16 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+//= require jquery
+
+
+// Updates every 30 seconds to mimic live stream.
+function timedRefresh(timeoutPeriod) {
+    setTimeout("location.reload(true);",timeoutPeriod);
+}
+
+$(document).ready(function(){
+  timedRefresh(30000);
+});
+
