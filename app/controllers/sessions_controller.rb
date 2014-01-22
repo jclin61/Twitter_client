@@ -11,15 +11,26 @@ class SessionsController < ApplicationController
 
   def show
     if session['access_token'] && session['access_token_secret']
+      #specify client.user's info as @user
       @user = client.user(include_entities: true)
+
+      #call client's home_timeline
+      @home = client.home_timeline  
     else
       redirect_to root_path
     end
+
   end
 
   def destroy
-  	#destroy session by setting user as nil
-  	session[:user_id] = nil
-    redirect_to root_url, notice: "Signed Out Success"
+    reset_session
+    redirect_to root_path, notice: 'Signed out'
+  end
+
+  def update
+    # :comment pass status update input from show.html
+    status_update = params[:comment]
+    @tweet = client.update(status_update)
+    redirect_to "/profile"
   end
 end

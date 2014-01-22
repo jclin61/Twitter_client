@@ -22,8 +22,10 @@ end
 gem 'omniauth-twitter'
 
 # twitter gem for read/write/access
-
 gem 'twitter'
+
+# twitter stream gem for realtime tweets
+gem 'tweetstream'
 
 # carrierwave Upload
 gem 'carrierwave'

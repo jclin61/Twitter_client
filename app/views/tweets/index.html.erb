@@ -1,24 +1,2 @@
-<h1> This is TWEETS INDEX PAGE </h1>
-
-<h3>Jerry C. Lin Twitter Client</h3>
-
-<!-- following sign in/sign out retreives information from your session -->
-
-<% if current_user %>
-    Hello <%= @user.name %>
-    <%= link_to "Sign out", signout_path %>
-
-<p><%= @user.screen_name %>'s Timeline</p>
-
-<% @tweets.each do |tweet|%>
-	<ul><%= tweet.text %></ul>
-	<% end %>
-
-
-
-<% else %> 
-    <%=link_to "Sign In with your Twitter Account", "/auth/twitter" %>
-<% end %>
-
 
 

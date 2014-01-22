@@ -2,22 +2,26 @@
 
 <!-- following sign in/sign out retreives information from your session -->
 
-<% if current_user %>
-    Hello <%= current_user.name %>
+<% if session != nil %>
+    Hello <%= @user.name %>
     <%= link_to "Sign out", signout_path %>
 
-<p>Your Timeline</p>
+	<%= form_tag("/update", method: "get") do %>
+		  <label for="status_update">Tweet</label>
+		  <%= text_field_tag :comment %>
+		 <%= submit_tag "Submit" %>
+	<% end %>
 
+	<p>Your Timeline</p>
 
-
-<%= @user.name %>
-
-
-
-
-
-
+	<!-- This div "timed_reload" is meant to receive updates to micmic live update -->
+	<div id = "timed_reload">
+		<%= @home.each do |list|%>
+		<ul><%= list.text %></ul>
+		<% end %>
+	</div>
 
 <% else %> 
+	<!-- path /auth/twitter for omniauth -->
     <%=link_to "Sign In with your Twitter Account", "/auth/twitter" %>
 <% end %>
