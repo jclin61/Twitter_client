@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   	user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = user.id
-    redirect_to root_url, notice: "You Are Now Signed In."
+    redirect_to show_path, notice: "You Are Now Signed In."
   end
 
   def show
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       #call client's home_timeline
       @home = client.home_timeline  
     else
-      redirect_to root_path
+      
     end
 
   end
